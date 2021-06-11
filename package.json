@@ -19,6 +19,8 @@
   "homepage": "https://github.com/christenson10/SQL-Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "^8.1.0"
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.1.0",
+    "mysql2": "^2.2.5"
   }
 }

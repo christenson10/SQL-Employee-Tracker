@@ -1,6 +1,7 @@
-USE employees;
+USE employee_db;
 
-INSERT INTO department
+INSERT INTO department (name)
+VALUES
 
 INSERT INTO role (title, salary, department_id)
 VALUES
