@@ -11,25 +11,16 @@ inquirer.
         type: 'list',
         message: 'What would you like to do?',
         choices: [
-            'Add Deparment',
-            'Add Role',
-            'Add Employee',
             'View all Departments',
             'View all Roles',
             'View all Employees',
+            'Add Deparment',
+            'Add Role',
+            'Add Employee',
             'Exit'
         ]
     })
     .then(response => {
-        if (response.question === 'Add Deparment') {
-            addDepartment();
-        }
-        if (response.question === 'Add Role') {
-            addRole();
-        }
-        if (response.question === 'Add Employee') {
-            addEmployee();
-        }
         if (response.question === 'View all Departments') {
             viewDepartment();
         }
@@ -39,6 +30,15 @@ inquirer.
         if (response.question === 'View all Employees') {
             viewEmployees();
         }
+        if (response.question === 'Add Deparment') {
+            addDepartment();
+        }
+        if (response.question === 'Add Role') {
+            addRole();
+        }
+        if (response.question === 'Add Employee') {
+            addEmployee();
+        }
         if (response.question === 'Exit') {
             return;
         }
@@ -46,6 +46,30 @@ inquirer.
 };
 
 menuPrompts();
+
+//View Department
+const viewDepartment = () => {
+    connection.query("SELECT * FROM department", (err, res) => {
+        if (err) throw err;
+        menuPrompts();
+    });
+};
+
+//View Role
+const viewRole = () => {
+    connection.query("SELECT * FROM role", (err, res) => {
+        if (err) throw err;
+        menuPrompts();
+    });
+};
+
+//View Employee
+const viewEmployees = () => {
+    connection.query("SELECT * FROM employee", (err, res) => {
+        if (err) throw err;
+        menuPrompts();
+    });
+};
 
 //Add Department
 const addDepartment = () => {
@@ -95,61 +119,27 @@ const addEmployee = () => {
     .prompt([
         {
             type: 'input',
-            name: 'name',
-            message: 'What is the employees name?',
+            name: 'firstName',
+            message: 'What is the employees first name?',
+        },
+        {
+            type: 'input',
+            name: 'lastName',
+            message: 'What is the employees last name?',
+        },
+        {
+            type: 'input',
+            name: 'roleId',
+            message: 'What is the employees role ID?',
         },
     ])
     .then((answer) => {
         connection.query(
-            "INSERT INTO employee",
-            { name: answer.name },
+            `INSERT INTO employee (first_name, last_name, role_id, manager_id)
+            VALUES ('${answer.firstName}', '${answer.lastName}', '${answer.roleId}', NULL)`,
             (err, res) => {
                 menuPrompts();
             }
         );
     });
 };
-
-//View Department
-const viewDepartment = () => {
-    connection.query("SELECT * FROM department", (err, res) => {
-        if (err) throw err;
-        menuPrompts();
-    });
-};
-
-//View Role
-const viewRole = () => {
-    connection.query("SELECT * FROM role", (err, res) => {
-        if (err) throw err;
-        menuPrompts();
-    });
-};
-
-//View Employee
-const viewEmployees = () => {
-    connection.query("SELECT * FROM employee", (err, res) => {
-        if (err) throw err;
-        menuPrompts();
-    });
-};
-
-// const addEmployee = () => {
-//     return inquirer
-//     .prompt([
-//         {
-//             type: 'input',
-//             name: 'name',
-//             message: 'What is the employees name?',
-//         },
-//     ])
-//     .then((answer) => {
-//         connection.query(
-//             "INSERT INTO employee",
-//             { name: answer.name },
-//             (err, res) => {
-//                 menuPrompts();
-//             }
-//         );
-//     });
-// };
