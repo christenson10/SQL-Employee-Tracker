@@ -51,6 +51,7 @@ menuPrompts();
 const viewDepartment = () => {
     connection.query("SELECT * FROM department", (err, res) => {
         if (err) throw err;
+        console.table(res);
         menuPrompts();
     });
 };
@@ -59,6 +60,7 @@ const viewDepartment = () => {
 const viewRole = () => {
     connection.query("SELECT * FROM role", (err, res) => {
         if (err) throw err;
+        console.table(res);
         menuPrompts();
     });
 };
@@ -67,6 +69,7 @@ const viewRole = () => {
 const viewEmployees = () => {
     connection.query("SELECT * FROM employee", (err, res) => {
         if (err) throw err;
+        console.table(res);
         menuPrompts();
     });
 };
@@ -83,9 +86,10 @@ const addDepartment = () => {
     ])
     .then((answer) => {
         connection.query(
-            "INSERT INTO department",
-            { name: answer.name },
+            "INSERT INTO department(name) VALUES(?)",
+            [answer.name],
             (err, res) => {
+                console.table(res);
                 menuPrompts();
             }
         );
@@ -132,12 +136,18 @@ const addEmployee = () => {
             name: 'roleId',
             message: 'What is the employees role ID?',
         },
+        {
+            type: 'input',
+            name: 'managersId',
+            message: 'What is the employees managers ID?',
+        },
     ])
     .then((answer) => {
         connection.query(
             `INSERT INTO employee (first_name, last_name, role_id, manager_id)
-            VALUES ('${answer.firstName}', '${answer.lastName}', '${answer.roleId}', NULL)`,
+            VALUES ('${answer.firstName}', '${answer.lastName}', '${answer.roleId}', '${answer.managersId}')`,
             (err, res) => {
+                console.table(res);
                 menuPrompts();
             }
         );

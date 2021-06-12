@@ -14,12 +14,12 @@ VALUES
   ('Manager', 100, 2),
   ('Department Head', 10000, 3),
   ('Secretary', 1000, 4),
-  ('Dinosaur', 100000000, 5);
+  ('Dinosaur', 10000, 5);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
-  ('George', 'Washington', '1', 5),
-  ('Abe', 'Lincoln', '2', 4),
-  ('Franky', 'Roosevelt', '3', 3),
-  ('Male', 'Dudebro', '4', 2),
-  ('Old', 'Politician', '5', 1);
+  ('George', 'Washington', 1, 1),
+  ('Abe', 'Lincoln', 2, 1),
+  ('Franky', 'Roosevelt', 2, 1),
+  ('Male', 'Dudebro', 3, 1),
+  ('Old', 'Politician', 4, 1);
