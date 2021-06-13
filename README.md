@@ -31,7 +31,3 @@ https://www.youtube.com/watch?v=uJIa_LrtU7k
 ## README Preview 2
 localhost:3001 takes to Note Taker
 ![Screenshot1](SQLTrackerScreenshot2.jpg)
-
-## README Preview 3
-localhost:3001/notes takes you to text boxes
-![Screenshot2](SQLTrackerScreenshot3.jpg)
