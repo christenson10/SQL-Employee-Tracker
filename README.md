@@ -24,4 +24,4 @@ https://christenson10.github.io/SQL-Employee-Tracker/
 ## Github Link
 https://github.com/christenson10/SQL-Employee-Tracker.git
 ## Video Link
-https://drive.google.com/file/d/14X-qYxS1dXC4rirMu3zAibvqDPn95TOZ/view
+https://www.youtube.com/watch?v=uJIa_LrtU7k
