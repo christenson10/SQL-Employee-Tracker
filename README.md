@@ -1,6 +1,6 @@
 # SQL-Employee-Tracker
 
-# Challenge 11 - Note Taker Application
+# Challenge 12 - SQL Employee Tracker
 
 ## Purpose
 As a small business owner, I want to be able to write and save notes to help organize and keep track of my tasks.
