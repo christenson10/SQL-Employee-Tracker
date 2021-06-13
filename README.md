@@ -19,8 +19,6 @@ As a small business owner, I want to be able to write and save notes to help org
 * I WANT to be able to view and manage the departments, roles, and employees in my company
 * SO THAT I can organize and plan my business
 
-## Live URL
-https://christenson10.github.io/SQL-Employee-Tracker/
 ## Github Link
 https://github.com/christenson10/SQL-Employee-Tracker.git
 ## Video Link
