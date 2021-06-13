@@ -23,3 +23,15 @@ As a small business owner, I want to be able to write and save notes to help org
 https://github.com/christenson10/SQL-Employee-Tracker.git
 ## Video Link
 https://www.youtube.com/watch?v=uJIa_LrtU7k
+
+## README Preview 1
+3 View All Functions
+![Screenshot1](SQLTrackerScreenshot1.jpg)
+
+## README Preview 2
+localhost:3001 takes to Note Taker
+![Screenshot1](SQLTrackerScreenshot2.jpg)
+
+## README Preview 3
+localhost:3001/notes takes you to text boxes
+![Screenshot2](SQLTrackerScreenshot3.jpg)
