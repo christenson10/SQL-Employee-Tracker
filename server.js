@@ -75,7 +75,7 @@ const viewEmployees = () => {
 };
 
 //Add Department
-const addDepartment = () => {
+const addDepartment = async () => {
     return inquirer
     .prompt([
         {
@@ -102,14 +102,24 @@ const addRole = () => {
     .prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'title',
             message: 'What role would you like to add?',
+        },
+        {
+            type: 'input',
+            name: 'salary',
+            message: 'What is the roles salary?',
+        },
+        {
+            type: 'input',
+            name: 'departmentId',
+            message: 'What is the roles department ID?',
         },
     ])
     .then((answer) => {
         connection.query(
-            "INSERT INTO role",
-            { name: answer.name },
+            `INSERT INTO role (title, salary, department_id)
+            VALUES ('${answer.title}', '${answer.salary}', '${answer.departmentId}')`,
             (err, res) => {
                 menuPrompts();
             }
